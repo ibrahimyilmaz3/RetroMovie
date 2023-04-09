@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        supportActionBar?.hide()
 
         prLoad.visibility = View.VISIBLE
 
@@ -40,14 +39,12 @@ class MainActivity : AppCompatActivity() {
                     in 200..299 -> {
                         Log.d("Response Code", "success messages: ${response.code()}")
                         response.body().let { itBody ->
-                            {
-                                itBody?.results.let { itData ->
-                                    if (itData!!.isNotEmpty()) {
-                                        movieAdapter.differ.submitList(itData)
-                                        rvMovie.apply {
-                                            layoutManager = LinearLayoutManager(this@MainActivity)
-                                            adapter = movieAdapter
-                                        }
+                            itBody?.results.let { itData ->
+                                if (itData!!.isNotEmpty()) {
+                                    movieAdapter.differ.submitList(itData)
+                                    rvMovie.apply {
+                                        layoutManager = LinearLayoutManager(this@MainActivity)
+                                        adapter = movieAdapter
                                     }
                                 }
                             }
@@ -57,7 +54,7 @@ class MainActivity : AppCompatActivity() {
                         Log.d("Response Code", "Redirection messages: ${response.code()}")
                     }
                     in 400..499 -> {
-                        Log.d("Response Code", "Clien error messages: ${response.code()}")
+                        Log.d("Response Code", "Client error messages: ${response.code()}")
                     }
                     in 500..599 -> {
                         Log.d("Response Code", "Server error messages: ${response.code()}")

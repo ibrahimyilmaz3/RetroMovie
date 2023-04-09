@@ -1,6 +1,7 @@
 package com.example.retrofitmovie.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +12,7 @@ import coil.load
 import coil.size.Scale
 import com.example.retrofitmovie.R
 import com.example.retrofitmovie.response.MovieListResponse
+import com.example.retrofitmovie.ui.DetailsActivity
 import com.example.retrofitmovie.utils.Constant
 import kotlinx.android.synthetic.main.item_movie.view.*
 
@@ -54,6 +56,12 @@ class MovieAdapter(/*private val movie: ArrayList<Movie>*/) :
                 }
                 tvLang.text = item.original_language
                 tvRelease.text = item.release_date
+
+                setOnClickListener {
+                    val intent = Intent(context,DetailsActivity::class.java)
+                    intent.putExtra("id", item.id)
+                    context.startActivity(intent)
+                }
             }
         }
     }
