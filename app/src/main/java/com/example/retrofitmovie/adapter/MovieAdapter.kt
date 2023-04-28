@@ -52,7 +52,7 @@ class MovieAdapter(/*private val movie: ArrayList<Movie>*/) :
                 ivPoster.load(moviePosterURL) {
                     crossfade(true)
                     placeholder(R.drawable.ss_1)
-                    scale(Scale.FILL)
+                    //scale(Scale.FILL)
                 }
                 tvLang.text = item.original_language
                 tvRelease.text = item.release_date

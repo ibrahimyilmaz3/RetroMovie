@@ -39,5 +39,4 @@ class ApiClient {
             .build()
         return retrofit
     }
-
 }
