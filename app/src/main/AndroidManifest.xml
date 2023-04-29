@@ -12,10 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RetrofitMovie">
         <activity
-            android:name=".ui.DetailsActivity"
+            android:name=".ui.activity.DetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

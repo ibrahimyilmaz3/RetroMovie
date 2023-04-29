@@ -1,6 +1,6 @@
-package com.example.retrofitmovie.response
+package com.example.retrofitmovie.remote.model
 
-data class DetailResponse(
+data class Detail(
     val adult: Boolean,
     val backdrop_path: String,
     val belongs_to_collection: Any,

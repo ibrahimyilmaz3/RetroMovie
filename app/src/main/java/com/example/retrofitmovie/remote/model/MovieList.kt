@@ -1,6 +1,6 @@
-package com.example.retrofitmovie.response
+package com.example.retrofitmovie.remote.model
 
-data class MovieListResponse(
+data class MovieList(
     val page: Int,
     val results: List<Result>,
     val total_pages: Int,
